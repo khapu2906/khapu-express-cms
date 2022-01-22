@@ -1,0 +1,19 @@
+{
+  "name": "khapu-express-cms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "nodejs",
+    "expressjs",
+    "nodejs-cms",
+    "express-cms"
+  ],
+  "author": "khapu <khapuonstage@gmail.com>",
+  "license": "ISC"
+}
