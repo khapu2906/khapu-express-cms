@@ -1,0 +1,103 @@
+{
+    "app": {
+        "http": {
+            "controllers": {
+                "demo-file": {
+                    "name": "DemoController.js",
+                    "content": ""
+                }    
+            },
+            "middleware": {
+                "auth-file": {
+                    "name": "AuthMiddleware.js",
+                    "content": ""
+                }
+            }
+        },
+        "models": {
+            "users-file": {
+                "name": "Users.js",
+                "content": ""
+            }
+        }
+    },
+    "bootstrap": {
+        "index-file": {
+            "name": "index.js",
+            "content": ""
+        }
+    },
+    "configs": {
+        "app-file": {
+            "name": "app.js",
+            "content": ""
+        },
+        "database-file": {
+            "name": "database.js",
+            "content": ""
+        },
+        "cache-file": {
+            "name": "cache.js",
+            "content": ""
+        },
+        "view-file": {
+            "name": "view.js",
+            "content": ""
+        },
+        "index-file": {
+            "name": "index.js",
+            "content": ""
+        }
+    },
+    "database": {
+        "migrations": {
+            "index-file": {
+                "name": "index.js",
+                "content": ""
+            }  
+        },
+        "seeders": {
+            "index-file": {
+                "name": "index.js",
+                "content": ""
+            }  
+        }
+    },
+    "resource": {
+        "views": {
+            "layouts": {},
+            "index-file": {
+                "name": "index.js",
+                "content": ""
+            }    
+        }
+    },
+    "public": {
+        
+    },
+    "routes": {
+        "api-file": {
+            "name": "api.js",
+            "content": ""
+        },
+        "index-file": {
+            "name": "index.js",
+            "content": ""
+        },
+        "web-file": {
+            "name": "web.js",
+            "content": ""
+        }
+    },
+    "storage": {
+        "logs": {}
+    },
+    "server-file": {
+        "name": "server.js",
+        "content": ""
+    },
+    "env-file": {
+        "name": ".env",
+        "content": ""
+    }
+}

@@ -1,0 +1,8 @@
+class DemoController 
+{
+    index (req, res) {
+
+    }
+}
+
+module.exports = new DemoController();

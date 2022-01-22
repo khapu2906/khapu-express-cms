@@ -1,0 +1,12 @@
+const express = require('./../node-module/khapu-express-cms/node_modules/express');
+const to = express.Router();
+
+async function go() {
+    
+    to.get('/test', async (req, res) => {
+        return await res.send('<h1>WEb Route</h1>');
+    })
+
+}
+
+module.exports = { go, to }

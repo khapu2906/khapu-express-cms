@@ -1,0 +1,27 @@
+var core = require('../node-module/khapu-express-cms/src')
+
+const env = process.env.NODE_ENV;
+const config = require('../structure');
+const port = config.app.server.port;
+console.log(config, port);
+// HTtp logger
+core.app.use(core.morgan('combined'));
+// app.use(express.static(path.join(__dirname, 'public')));
+
+core.view;
+core.route;
+
+// core.app.get('/', (req, res) => {
+//     return res.render('error', { error: err });
+// })
+// app.use(methodOverride('_method'));
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+
+// app.set('view engine', 'hbs');
+// app.set('views', path.join(__dirname, 'resources/views'));
+
+
+
+core.app.listen(port);
+
