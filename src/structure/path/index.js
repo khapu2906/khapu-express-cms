@@ -5,9 +5,9 @@ const __PATH = './../../SampleContent/';
 
 
 // list sample-content
+const demo_controller_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'controllers/demo' ), 'utf8')
 const config_index_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'configs/index' ), 'utf8')
 const config_app_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'configs/app' ), 'utf8')
-const demo_controller_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'controllers/demo' ), 'utf8')
 const route_index_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'routes/index'), 'utf8')
 const route_web_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'routes/web'), 'utf8')
 const route_api_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'routes/api'), 'utf8')

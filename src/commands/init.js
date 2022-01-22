@@ -10,7 +10,7 @@ const command = {
         for(const[key, value] of Object.entries(list)) {
             if (key.includes('file')) {
                 const path = parent + '/' + value.name;
-                fs.writeFile(pathCore.join(__dirname, __PATH + path), value.content, err => {
+                const file = await fs.writeFile(pathCore.join(__dirname, __PATH + path), value.content, err => {
                     if (err) {
                         console.error(err)
                         return
@@ -18,15 +18,15 @@ const command = {
                 })
             } else {
                 const path = parent + '/' + key;
-                fs.mkdir(pathCore.join(__dirname, __PATH + path), (err) => {
+                const folder = await fs.mkdir(pathCore.join(__dirname, __PATH + path), (err) => {
                     if (err) {
                         return console.error(err);
                     }
+                    if (value) {
+                        command.init(value, path);
+                    }
                     console.log('Directory created successfully!');
                 })
-                if (value) {
-                    command.init(value, path);
-                }
             }
         }
     }

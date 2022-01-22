@@ -1,7 +1,7 @@
 var core = require('../node-module/khapu-express-cms/src')
 
 const env = process.env.NODE_ENV;
-const config = require('../structure');
+const config = require('../configs');
 const port = config.app.server.port;
 console.log(config, port);
 // HTtp logger

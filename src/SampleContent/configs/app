@@ -1,6 +1,6 @@
 module.exports = {
     app: {
-        name: 'SpiderJS say hi!!!!'
+        name: 'WELCOME TO EXPRESS STATION'
     },
     debug: false,
     cert: {
