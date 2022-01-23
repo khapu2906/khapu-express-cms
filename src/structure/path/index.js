@@ -14,6 +14,7 @@ const route_index_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH 
 const route_web_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'routes/web'), 'utf8')
 const route_api_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'routes/api'), 'utf8')
 const view_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'views/demo' ), 'utf8')
+const view_layout_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'views/main' ), 'utf8')
 const bootstrap_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'bootstrap' ), 'utf8')
 const provider_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'provider' ), 'utf8')
 const server_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'server' ), 'utf8')
@@ -90,9 +91,14 @@ const dirTree = {
     },
     resource: {
         views: {
-            layouts: {},
+            layouts: {
+                "main-file": {
+                    name: "main-file",
+                    content: view_layout_sample_file
+                }
+            },
             "index-file": {
-                name: "index.hbs",
+                name: "index.uniform",
                 content: view_sample_file
             }    
         }

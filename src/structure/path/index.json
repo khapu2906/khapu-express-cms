@@ -67,7 +67,12 @@
     },
     "resource": {
         "views": {
-            "layouts": {},
+            "layouts": {
+                "main-file": {
+                    "name": "main-file",
+                    "content": ""
+                }
+            },
             "index-file": {
                 "name": "index.js",
                 "content": ""

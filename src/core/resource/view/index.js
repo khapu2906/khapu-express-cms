@@ -3,10 +3,10 @@ const path = require('path');
 
 async function handle (app, handlebars) {
     // Template engine
-    app.engine('hbs', handlebars({
-        extname: '.hbs'
+    app.engine('.uniform', handlebars({
+        extname: '.uniform'
     }));
-    app.set('view engine', 'handlebars');
+    app.set('view engine', '.uniform');
     app.set('views', path.join(__dirname, __PATH_VIEW));
 }
 
