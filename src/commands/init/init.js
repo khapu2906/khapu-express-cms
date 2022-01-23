@@ -14,6 +14,8 @@ const command = {
                     if (err) {
                         console.error(err)
                         return
+                    } else {
+                        console.log(key, 'was equipped!');
                     }
                 })
             } else {
@@ -25,7 +27,7 @@ const command = {
                     if (value) {
                         command.init(value, path);
                     }
-                    console.log('Directory created successfully!');
+                    console.log(key, 'was equipped!');
                 })
             }
         }

@@ -1,6 +1,7 @@
+const __PATH_VIEW = "/../../../../../../resource/views"
 const path = require('path');
+
 async function handle (app, handlebars) {
-    const __PATH_VIEW = "/../../../../../../resource/views"
     // Template engine
     app.engine('hbs', handlebars({
         extname: '.hbs'
