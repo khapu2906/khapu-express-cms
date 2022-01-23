@@ -20,7 +20,7 @@
                 "content": ""
             }
         },
-        "provider": {
+        "providers": {
             "index-file": {
                 "name": "index.js",
                 "content": ""

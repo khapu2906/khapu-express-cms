@@ -1,11 +1,9 @@
 const database = require('./database.js')
 const cache = require('./cache.js')
-const view = require('./view.js')
 const app = require('./app.js')
 
 module.exports = {
     app,
     database,
-    view,
     cache
 }
