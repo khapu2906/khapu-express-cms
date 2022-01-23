@@ -19,6 +19,12 @@
                 "name": "Users.js",
                 "content": ""
             }
+        },
+        "provider": {
+            "index-file": {
+                "name": "index.js",
+                "content": ""
+            }
         }
     },
     "bootstrap": {
@@ -38,10 +44,6 @@
         },
         "cache-file": {
             "name": "cache.js",
-            "content": ""
-        },
-        "view-file": {
-            "name": "view.js",
             "content": ""
         },
         "index-file": {

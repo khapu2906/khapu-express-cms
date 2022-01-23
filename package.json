@@ -1,5 +1,5 @@
 {
-  "name": "khapu-express-cms",
+  "name": "spy-84-cms",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
@@ -18,7 +18,8 @@
     "express-cms"
   ],
   "bin": {
-    "khapu-cms-init": "src/commands/index.js"
+    "spy@prepare": "src/commands/init/index.js",
+    "spy@go": "src/commands/index.js"
   },
   "author": "khapu <khapuonstage@gmail.com>",
   "license": "ISC",

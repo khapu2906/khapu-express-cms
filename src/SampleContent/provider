@@ -1,0 +1,5 @@
+async function register(app) {
+
+}
+
+module.exports = { register }
