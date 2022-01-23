@@ -43,7 +43,7 @@ const dirTree = {
                 content: ""
             }
         },
-        provider: {
+        providers: {
             "index-file": {
                 name: "index.js",
                 content: provider_sample_file
