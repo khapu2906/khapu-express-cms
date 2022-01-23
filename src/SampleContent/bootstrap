@@ -1,4 +1,4 @@
-const core = require('../node-module/spy-84-cms/src')
+const core = require('spy-84-cms')
 const path = require('path')
 
 core.dotenv.config()
