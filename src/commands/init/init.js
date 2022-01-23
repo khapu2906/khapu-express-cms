@@ -1,9 +1,9 @@
 const fs = require('fs');
 const pathCore = require('path');
-const __PATH = './../../../../';
+const __PATH = './../../../../../';
 
 console.log(__dirname);
-const structure = require('../structure/path');
+const structure = require('./../../structure/path');
 
 const command = {
     init: async (list, parent = '') => {
