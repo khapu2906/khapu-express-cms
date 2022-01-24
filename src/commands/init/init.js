@@ -5,6 +5,14 @@ const __PATH = './../../../../../';
 console.log(__dirname);
 const structure = require('./../../structure/path');
 
+console.log(`\x1b[5m\x1b[33m******************************************************************************************************\x1b[0m`);
+console.log(`*\x1b[5m\                                       LET'S PREPARE FOR THE MISSION                                \x1b[0m*`);
+console.log(`\x1b[5m\x1b[33m******************************************************************************************************\x1b[0m`);
+console.log('')
+console.log('                                                   ,.,.,.,')
+console.log("                                                  ( 3 _ 3 )");    
+console.log("                                                  ( _ Y _ )");  
+
 const command = {
     init: async (list, parent = '') => {
         for(const[key, value] of Object.entries(list)) {
@@ -15,7 +23,7 @@ const command = {
                         console.error(err)
                         return
                     } else {
-                        console.log(key, 'was equipped!');
+                        console.log('** ', value.name, 'was equipped!',' **');
                     }
                 })
             } else {
@@ -27,7 +35,7 @@ const command = {
                     if (value) {
                         command.init(value, path);
                     }
-                    console.log(key, 'was equipped!');
+                    console.log('** ', key, 'was equipped!',' **');
                 })
             }
         }
@@ -35,3 +43,13 @@ const command = {
 }
 
 command.init(structure)
+
+console.log('')
+console.log(`\x1b[5m\x1b[33m******************************************************************************************************\x1b[0m`);
+console.log(`*\x1b[5m\                                                  READY                                           \x1b[0m*`);
+console.log(`\x1b[5m\x1b[33m******************************************************************************************************\x1b[0m`);
+console.log('')
+console.log(`                                               ______                                               `);
+console.log(`                                             _|__\x1b[31m☆\x1b[0m___|_                                                `);
+console.log(`\x1b[5m\x1b[33m<======================================== ҉\x1b[0m   ( ◣ _◢ ) \x1b[5m\x1b[33m ҉  ============================================>\x1b[0m`);
+console.log(`\x1b[5m\x1b[33m                                           \x1b[0m   ]=[$]==[  \x1b[5m\x1b[33m                        \x1b[0m`);
