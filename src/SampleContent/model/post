@@ -1,0 +1,44 @@
+'use strict'
+const { Model, db } = require('spy-84-cms');
+const Comment = require('./Post')
+
+class Post extends Model {
+
+    tableName = 'post'
+
+    timestamps = true
+    
+    freezeTableName = true
+
+    createdAt = false
+
+    updatedAt = false
+
+    attributes = {
+        id: {
+            type: this.dataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        title: {
+            type: this.dataTypes.INTEGER,
+        },
+        content: {
+            type: this.dataTypes.TEXT
+        }
+    }
+
+    constructor(db) {
+        super(db)
+    }
+
+    // post() {
+    //     this.use.has
+    // }
+    
+}   
+
+const post = new Post(db);
+post.up();
+
+module.exports = post

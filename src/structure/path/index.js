@@ -80,10 +80,10 @@ const dirTree = {
             name: "route.js",
             content: config_route_sample_file
         },
-        "index-file": {
-            name: "index.js",
-            content: config_index_sample_file
-        }
+        // "index-file": {
+        //     name: "index.js",
+        //     content: config_index_sample_file
+        // }
     },
     database: {
         migrations: {

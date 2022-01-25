@@ -1,31 +1,39 @@
 'use strict'
-const fs = require('fs');
-const path = require('path');
-let db = {};
+class DB 
+{
+    dataValues = {};
 
+    static instance = null;
 
-async function handle(Sequelize, config) {
-    db = {
-        Sequelize
-    }
-    if(config && typeof config === 'object' && Object.keys(config).length > 0) {
-        for(const [key, value] of Object.entries(config)) {
-            if (value.use) {
-                try {
-                    db[key] = new Sequelize(value.database, value.username, value.password, {
-                        host: value.host,
-                        port: value.port,
-                        dialect: key
-                    });
-                    await db[key].authenticate();
-                    console.log('Connection has been established successfully.');
-                } catch (error) {
-                    console.error('Unable to connect to the database:', error);
+    handle(sequelize, config) {
+        this.dataValues = {
+            sequelize,
+            Model: sequelize.Model,
+            Op: sequelize.Op,
+            DataTypes: sequelize.DataTypes
+        }
+        if(config && typeof config === 'object' && Object.keys(config).length > 0) {
+            for(const [key, value] of Object.entries(config)) {
+                if (value.use) {
+                    try {
+                        this.dataValues.Sequelize = new sequelize.Sequelize(value.database, value.username, value.password, {
+                            host: value.host,
+                            port: value.port,
+                            dialect: key
+                        });
+                        this.dataValues.Sequelize.authenticate();
+                        console.log('Connection has been established successfully.');
+                    } catch (error) {
+                        console.error('Unable to connect to the database:', error);
+                    }
                 }
             }
         }
     }
 }
 
+if (DB.instance === null) {
+    DB.instance = new DB;
+}
 
-module.exports = { handle, db};
+module.exports = DB.instance
