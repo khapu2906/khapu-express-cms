@@ -1,5 +1,11 @@
-async function register(app) {
+'use strict'
 
+async function register(app) {
+     
 }
 
-module.exports = { register }
+const boot = {
+    configs: require('./../../configs')
+}
+
+module.exports = { register, boot }

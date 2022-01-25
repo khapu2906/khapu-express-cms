@@ -1,14 +1,13 @@
 const core = require('spy-84-cms')
 const path = require('path')
 
-core.dotenv.config()
 const env = process.env;
 
 const port = configs.app.server.port;
 const host = configs.app.server.host;
-const name = configs.app.server.name;
+const name = configs.app.name;
 
-provider.register
+
 // http Loger
 core.app.use(core.morgan('combined'));
 core.app.use(core.express.static(path.join(__dirname, '../public')));
@@ -27,4 +26,5 @@ console.log(`-------------------------------`);
 
 
 core.app.listen(port);
+
 
