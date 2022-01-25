@@ -4,9 +4,9 @@ const path = require('path')
 
 const env = process.env;
 
-const port = configs.app.server.port;
-const host = configs.app.server.host;
-const name = configs.app.name;
+const port = core.configs.app.server.port;
+const host = core.configs.app.server.host;
+const name = core.configs.app.name;
 
 
 // http Loger
