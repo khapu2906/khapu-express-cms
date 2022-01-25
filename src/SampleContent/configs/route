@@ -1,0 +1,14 @@
+
+module.exports = {
+    basePath: './../routes',
+    elements: {
+        api: {
+            pathFile: "./api.js",
+            slug: "/api"
+        },
+        web: {
+            pathFile: "./web.js",
+            slug: "/"
+        }
+    }
+}

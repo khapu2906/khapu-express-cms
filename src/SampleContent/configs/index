@@ -1,3 +1,4 @@
+require('dotenv').config()
 const database = require('./database.js')
 const cache = require('./cache.js')
 const app = require('./app.js')

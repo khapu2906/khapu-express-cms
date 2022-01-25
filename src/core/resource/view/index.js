@@ -1,13 +1,13 @@
-const __PATH_VIEW = "/../../../../../../resource/views"
-const path = require('path');
+const __BASE_PATH_VIEW = "./../../../../../"
+const path = require('path')
 
-async function handle (app, handlebars) {
+async function handle (app, handlebars, config) {
     // Template engine
     app.engine('.uniform', handlebars({
         extname: '.uniform'
     }));
     app.set('view engine', '.uniform');
-    app.set('views', path.join(__dirname, __PATH_VIEW));
+    app.set('views', path.join(__dirname, __BASE_PATH_VIEW + config.basePath));
 }
 
 module.exports = { handle };

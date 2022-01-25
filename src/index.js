@@ -1,19 +1,23 @@
-const dotenv = require('dotenv')
+'use strict'
 const path = require('path')
 const { response } = require('express')
 const express = require('express')
 const morgan = require('morgan')
+const Sequelize = require('sequelize')
 const bodyParser = require('body-parser')
 const { engine } = require('express-handlebars')
 const methodOverride = require('method-override')
-const configs = require('./core/config')
 const app = express()
-const view = require('./core/resource/view').handle(app, engine)
-const route = require('./core/route').handle(app)
-const provider = require('./../../../app/providers').register(app)
+const provider = require('./../../../app/providers');
+
+provider.register(app)
+const configs = provider.boot.configs;
+
+const view = require('./core/resource/view').handle(app, engine, configs.view)
+const route = require('./core/route').handle(app, configs.route)
+const database = require('./core/database').handle(Sequelize, configs.database)
 
 module.exports = {
-    dotenv,
     express,
     morgan,
     bodyParser,
@@ -22,5 +26,7 @@ module.exports = {
     configs,
     route,
     view,
-    provider
+    provider,
+    configs,
+    database
 }
