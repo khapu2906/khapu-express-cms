@@ -10,6 +10,8 @@ const config_index_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH
 const config_app_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'configs/app' ), 'utf8')
 const config_cache_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'configs/cache' ), 'utf8')
 const config_database_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'configs/database' ), 'utf8')
+const config_view_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'configs/view' ), 'utf8')
+const config_route_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'configs/route' ), 'utf8')
 const route_index_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'routes/index'), 'utf8')
 const route_web_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'routes/web'), 'utf8')
 const route_api_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'routes/api'), 'utf8')
@@ -69,6 +71,14 @@ const dirTree = {
         "cache-file": {
             name: "cache.js",
             content: config_cache_sample_file
+        },
+        "view-file": {
+            name: "view.js",
+            content: config_view_sample_file
+        },
+        "route-file": {
+            name: "route.js",
+            content: config_route_sample_file
         },
         "index-file": {
             name: "index.js",

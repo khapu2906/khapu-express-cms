@@ -4,11 +4,9 @@ const path = require('path')
 core.dotenv.config()
 const env = process.env;
 
-const configs = require('../configs');
 const port = configs.app.server.port;
 const host = configs.app.server.host;
 const name = configs.app.server.name;
-const provider = require('../app/providers');
 
 provider.register
 // http Loger

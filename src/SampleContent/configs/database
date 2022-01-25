@@ -1,10 +1,10 @@
-require('dotenv').config();
 module.exports = {
     mysql: {
         host: process.env.MYSQL_HOST || 'xxx',
         port: process.env.MYSQL_PORT || '3306',
         username: process.env.MYSQL_USER || 'xxx',
         password: process.env.MYSQL_PASSWORD || 'xxx',
-        database: process.env.MYSQL_DATABASE || 'xxx'
+        database: process.env.MYSQL_DATABASE || 'xxx',
+        use: true
     }    
 }
