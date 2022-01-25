@@ -2,9 +2,13 @@ require('dotenv').config()
 const database = require('./database.js')
 const cache = require('./cache.js')
 const app = require('./app.js')
+const view = require('./view.js')
+const route = require('./route.js')
 
 module.exports = {
     app,
     database,
-    cache
+    cache,
+    view,
+    route
 }

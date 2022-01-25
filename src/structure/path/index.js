@@ -73,11 +73,11 @@ const dirTree = {
             content: config_cache_sample_file
         },
         "view-file": {
-            name: "cache.js",
+            name: "view.js",
             content: config_view_sample_file
         },
         "route-file": {
-            name: "cache.js",
+            name: "route.js",
             content: config_route_sample_file
         },
         "index-file": {

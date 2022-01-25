@@ -3,11 +3,10 @@ const path = require('path')
 
 const env = process.env;
 
-const configs = require('../configs');
 const port = configs.app.server.port;
 const host = configs.app.server.host;
 const name = configs.app.name;
-const provider = require('../app/providers');
+
 
 // http Loger
 core.app.use(core.morgan('combined'));
