@@ -1,10 +1,10 @@
 module.exports = {
     mysql: {
-        host: process.env.MYSQL_HOST || 'xxx',
-        port: process.env.MYSQL_PORT || '3306',
-        username: process.env.MYSQL_USER || 'xxx',
-        password: process.env.MYSQL_PASSWORD || 'xxx',
-        database: process.env.MYSQL_DATABASE || 'xxx',
+        host: process.env.DB_HOST || 'xxx',
+        port: process.env.DB_PORT || '3306',
+        username: process.env.DB_USER || 'xxx',
+        password: process.env.DB_PASSWORD || 'xxx',
+        database: process.env.DB_DATABASE || 'xxx',
         use: true
     }    
 }

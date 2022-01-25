@@ -1,4 +1,3 @@
-const configJson = require('./index.json')
 const fs = require('fs')
 const pathCore = require('path');
 const __PATH = './../../SampleContent/';
@@ -12,6 +11,10 @@ const config_cache_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH
 const config_database_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'configs/database' ), 'utf8')
 const config_view_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'configs/view' ), 'utf8')
 const config_route_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'configs/route' ), 'utf8')
+const model_category_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'models/category'), 'utf8')
+const model_postCategory_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'models/postCategory'), 'utf8')
+const model_comment_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'models/comment'), 'utf8')
+const model_post_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'models/post'), 'utf8')
 const route_index_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'routes/index'), 'utf8')
 const route_web_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'routes/web'), 'utf8')
 const route_api_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'routes/api'), 'utf8')
@@ -41,9 +44,21 @@ const dirTree = {
             }
         },
         models: {
-            "users-file": {
-                name: "Users.js",
-                content: ""
+            "category-file": {
+                name: "Category.js",
+                content: model_category_sample_file
+            },
+            "post-category-file": {
+                name: "PostCategory.js",
+                content: model_postCategory_sample_file
+            },
+            "comment-file": {
+                name: "Comment.js",
+                content: model_comment_sample_file
+            },
+            "post-file": {
+                name: "Post.js",
+                content: model_post_sample_file
             }
         },
         providers: {
@@ -80,10 +95,10 @@ const dirTree = {
             name: "route.js",
             content: config_route_sample_file
         },
-        // "index-file": {
-        //     name: "index.js",
-        //     content: config_index_sample_file
-        // }
+        "index-file": {
+            name: "index.js",
+            content: config_index_sample_file
+        }
     },
     database: {
         migrations: {
@@ -121,10 +136,10 @@ const dirTree = {
             name: "api.js",
             content: route_api_sample_file
         },
-        "index-file": {
-            name: "index.js",
-            content: route_index_sample_file
-        },
+        // "index-file": {
+        //     name: "index.js",
+        //     content: route_index_sample_file
+        // },
         "web-file": {
             name: "web.js",
             content: route_web_sample_file

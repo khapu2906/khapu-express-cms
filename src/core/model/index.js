@@ -30,8 +30,6 @@ class CORE
         this.db = db;
     }
 
-
-
     up() {
         const modelName = this.constructor.name;
         if (modelName !== 'CORE') {

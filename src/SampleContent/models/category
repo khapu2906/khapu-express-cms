@@ -1,0 +1,42 @@
+// 'use strict'
+// const { Model, db } = require('spy-84-cms');
+// const Post = require('./Post');
+
+// class Category extends Model {
+
+//     tableName = 'category'
+
+//     timestamps = true
+    
+//     freezeTableName = true
+
+//     createdAt = false
+
+//     updatedAt = false
+
+//     attributes = {
+//         id: {
+//             type: this.dataTypes.INTEGER,
+//             autoIncrement: true,
+//             primaryKey: true
+//         },
+//         name: {
+//             type: this.dataTypes.INTEGER,
+//         },
+//     }
+
+//     constructor(db) {
+//         super(db)
+//     }
+
+//     posts() {
+//         this.use.belongsToMany(Post.use, { through: 'PostCategoryAssoc' })
+//     }
+
+// }   
+
+// const category = new Category(db);
+// category.up();
+// category.posts;
+
+// module.exports = category
