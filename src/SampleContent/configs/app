@@ -1,5 +1,5 @@
 module.exports = {
-    name: process.env.APP_NAME || 'EXPRESS STATION',
+    name: process.env.APP_NAME || 'EXPRESS SPY',
     debug: false,
     server: {
         host: process.env.APP_HOST ||'localhost',
