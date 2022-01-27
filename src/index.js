@@ -35,7 +35,6 @@ module.exports = {
     route,
     view,
     provider,
-    container,
     configs,
     db,
     Model,
