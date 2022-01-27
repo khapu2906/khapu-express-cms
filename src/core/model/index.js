@@ -4,7 +4,7 @@ class CORE
 {
     tableName = ''
 
-    dataTypes 
+    dataTypes = {}
 
     Op = false
 

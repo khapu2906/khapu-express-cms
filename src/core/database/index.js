@@ -3,7 +3,18 @@ class DB
 {
     dataValues = {};
 
-    static instance = null;
+    static _instance = null;
+
+    constructor() {
+    
+    }
+
+    static getInstance() {
+        if (DB._instance === null) {
+            DB._instance = new DB;
+        }
+        return DB._instance;
+    }
 
     handle(sequelize, config) {
         this.dataValues = {
@@ -33,8 +44,4 @@ class DB
     }
 }
 
-if (DB.instance === null) {
-    DB.instance = new DB;
-}
-
-module.exports = DB.instance
+module.exports = DB.getInstance();

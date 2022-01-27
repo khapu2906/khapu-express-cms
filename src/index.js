@@ -8,10 +8,12 @@ const bodyParser = require('body-parser')
 const { engine } = require('express-handlebars')
 const methodOverride = require('method-override')
 const app = express()
-const provider = require('./../../../app/providers');
 const to = express.Router();
-provider.register(app)
-const configs = provider.boot.configs;
+
+const provider = require('./../../../app/providers');
+provider.boot(app)  
+
+const configs = provider.register.configs;
 const view = require('./core/resource/view').handle(app, engine, configs.view)
 const route = require('./core/route').handle(app, configs.route)
 
@@ -33,6 +35,7 @@ module.exports = {
     route,
     view,
     provider,
+    container,
     configs,
     db,
     Model,
