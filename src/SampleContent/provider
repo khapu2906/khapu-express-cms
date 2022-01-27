@@ -1,11 +1,11 @@
 'use strict'
 
-async function register(app) {
+async function boot(app) {
      
 }
 
-const boot = {
+const register = {
     configs: require('./../../configs')
 }
 
-module.exports = { register, boot }
+module.exports = { boot, register }
