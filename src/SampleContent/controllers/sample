@@ -1,0 +1,9 @@
+
+class __NAME__ 
+{
+    async index (req, res) {
+
+    }
+}
+
+module.exports = new __NAME__();

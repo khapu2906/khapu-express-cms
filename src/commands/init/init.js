@@ -42,3 +42,4 @@ const command = {
 }
 
 command.init(structure)
+ 

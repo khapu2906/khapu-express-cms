@@ -1,6 +1,6 @@
 class DemoController 
 {
-    index (req, res) {
+    async index (req, res) {
 
     }
 }

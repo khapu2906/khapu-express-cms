@@ -19,6 +19,7 @@
   ],
   "bin": {
     "spy@prepare": "src/commands/init/index.js",
+    "spy@list-command": "src/commands/list.js",
     "spy@go": "src/commands/index.js"
   },
   "author": "khapu <khapuonstage@gmail.com>",

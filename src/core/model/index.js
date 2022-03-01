@@ -38,8 +38,9 @@ class CORE
     static getInstance() {
         if (this._instance === null) {
             this._instance = new this
+            this._instance.up()
         }
-        return this._instance
+        return this._instance.use
     }
 
     up() {
@@ -66,7 +67,6 @@ class CORE
                 console.error(chalk.red('Database config error !!!'));
             }
         }
-        return this
     }
 }
 

@@ -45,4 +45,4 @@ class Post extends Model {
     
 }   
 
-module.exports = Post.getInstance().up().use
+module.exports = Post.getInstance()
