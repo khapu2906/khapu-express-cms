@@ -1,24 +1,37 @@
-#!/usr/bin/env node
-
 const args = process.argv.slice(2)
 const chalk = require('chalk')
 const fs = require('fs')
-const typeAndName = args[0] ?? null;
+const command = args[0] ?? null
+const typeAndName = args[1] ?? null;
 const path = require('path');
 const APP_PATH = '../../../../../'
 const CORE_PATH = '../../SampleContent/'
-const tagAndPath = args[1] ?? null;
+const tagAndPath = args[2] ?? null;
 
-let subPath = null;
+let subPath = null
+let type = null
 
-if (!typeAndName) {
-    require('./init')
-    return
+switch (command) {
+    case 'prepare':
+        require('./init')
+        return
+    default:
+        if (command.includes('prepare:')) {
+            type = command.split(':')[1]
+            if (!type) {
+                console.error(chalk.red('Command invalid!'))
+                return
+            }
+        } else {
+            console.error(chalk.red('Command invalid!'))
+            return
+        }
+        break;
 }
 
 //tag path
 if (tagAndPath) {
-    if (tagAndPath.includes('=')) {
+    if (tagAndPath.includes('--path=')) {
         const arrTagAndPath = tagAndPath.split('=')
         const tag = arrTagAndPath[0]
         switch (tag) {
@@ -35,18 +48,20 @@ if (tagAndPath) {
     }
 }
 
-//tag element and create element
+// tag element and create element
 if (typeAndName) {
-    if (typeAndName.includes('=')) {
+    if (typeAndName.includes('--name=')) {
         const arr = typeAndName.split('=')
-        const type = arr[0]
+        const tag = arr[0]
         const name = arr[1]
+        
         if (!name) {
-            console.log('Name is require')
+            console.log(chalk.red('Name is required!'))
             return
         }
         switch(type) {
-            case '--model': 
+            // create model
+            case 'model': 
                 const modelPath = (!subPath) ? path.join(__dirname, APP_PATH, '/app/models/', `${name}.js`) : 
                     path.join(__dirname, APP_PATH, subPath, `${name}.js`)
                 let contentModelSample = fs.readFileSync(path.join(__dirname, CORE_PATH + 'models/sample' ), 'utf-8')
@@ -59,7 +74,8 @@ if (typeAndName) {
                 })
                 console.log(chalk.green(`Successfully create model: ${name}!`))
                 break
-            case '--controller':
+            // create controller
+            case 'controller':
                 const controllerPath = (!subPath) ? path.join(__dirname, APP_PATH, '/app/http/controllers', `${name}.js`) : 
                     path.join(__dirname, APP_PATH, subPath, `${name}.js`)
                 let contentControllerSample = fs.readFileSync(path.join(__dirname, CORE_PATH + 'controllers/sample' ), 'utf-8')
@@ -73,7 +89,7 @@ if (typeAndName) {
                 console.log(chalk.green(`Successfully create controller: ${name}!`))
                 break
             default:
-                console.error(chalk.red('Tag invalid!'))
+                console.error(chalk.red('Command invalid!'))
                 return
         }
     } else {

@@ -54,26 +54,39 @@ npm i spy-84-cms
 ---
 ## Usage
 
-* Generate structure by:
+* Helper:
 
   ```
-  spy@prepare
+  spy help
 
   ```
     **or**
   ```
-  npx spy@prepare
+  npx spy prepare
+
+  
+* Generate structure by:
+
+  ```
+  spy prepare
+  spy prepare:model --name=<required> //Be used to generate a model  
+  spy prepare:controller --name=<required> //Be used to generate a controller  
+
+  ```
+    **or**
+  ```
+  npx spy prepare
 
   ```
 
 * Run by
   ```
-  spy@go
+  spy go
 
   ```
     **or**
   ```
-  npx spy@go
+  npx spy go
 
   ```
   **or**
