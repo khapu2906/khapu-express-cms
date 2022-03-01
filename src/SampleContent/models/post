@@ -1,7 +1,5 @@
 'use strict'
-const { Model, db } = require('spy-84-cms');
-// const Comment = require('./Comment')
-// const Category = require('./Category')
+const { Model } = require('spy-84-cms');
 
 class Post extends Model {
 
@@ -21,35 +19,30 @@ class Post extends Model {
             autoIncrement: true,
             primaryKey: true
         },
-        title: {
-            type: this.dataTypes.INTEGER,
+        name: {
+            type: this.dataTypes.STRING(220),
+        },
+        image: {
+            type: this.dataTypes.TEXT,
+        },
+        short_content: {
+            type: this.dataTypes.TEXT,
+        },
+        slug: {
+            type: this.dataTypes.TEXT,
         },
         content: {
-            type: this.dataTypes.TEXT
-        }
+            type: this.dataTypes.TEXT,
+        },
+        category_new_id: {
+            type: this.dataTypes.INTEGER,
+        },
     }
 
-    constructor(db) {
-        super(db)
+    constructor() {
+        super()
     }
-
-    // comments() {
-    //     this.use.hasMany(Comment.use, {
-    //         targeKey: 'id',
-    //         foreignKey: 'commentId',
-    //         constraints: true
-    //     })
-    // }
-
-    // categorys() {
-    //     this.use.belongsToMany(Category.use, { through: 'PostCategoryAssoc' })
-    // }
     
 }   
 
-const post = new Post(db);
-post.up();
-// post.comments();
-// post.categorys();
-
-module.exports = post
+module.exports = Post.getInstance().up().use

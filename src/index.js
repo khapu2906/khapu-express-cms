@@ -22,8 +22,7 @@ const database = require('./core/database')
 database.handle(sequelize, configs.database)
 
 const db = database.dataValues;
-
-const Model = require('./core/model')
+const Model = require('./core/model').init(db)
 
 module.exports = {
     express,

@@ -1,42 +1,41 @@
-// 'use strict'
-// const { Model, db } = require('spy-84-cms');
-// const Post = require('./Post');
+'use strict'
+const Post = require('./Post');
 
-// class Category extends Model {
+class Category extends Model {
 
-//     tableName = 'category'
+    tableName = 'category'
 
-//     timestamps = true
+    timestamps = true
     
-//     freezeTableName = true
+    freezeTableName = true
 
-//     createdAt = false
+    createdAt = false
 
-//     updatedAt = false
+    updatedAt = false
 
-//     attributes = {
-//         id: {
-//             type: this.dataTypes.INTEGER,
-//             autoIncrement: true,
-//             primaryKey: true
-//         },
-//         name: {
-//             type: this.dataTypes.INTEGER,
-//         },
-//     }
+    attributes = {
+        id: {
+            type: this.dataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        name: {
+            type: this.dataTypes.INTEGER,
+        },
+    }
 
-//     constructor(db) {
-//         super(db)
-//     }
+    association = {
+        posts: () => {
+            this.use.hasMany(Post, {
+                targetKey: 'id',
+                foreignKey: 'postId',
+            })
+        }
+    }
 
-//     posts() {
-//         this.use.belongsToMany(Post.use, { through: 'PostCategoryAssoc' })
-//     }
+    constructor(db) {
+        super(db)
+    }
+}   
 
-// }   
-
-// const category = new Category(db);
-// category.up();
-// category.posts;
-
-// module.exports = category
+module.exports = Category.getInstance().up().use;

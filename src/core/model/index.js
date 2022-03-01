@@ -1,7 +1,11 @@
 'use strict'
+const chalk = require('chalk')
 
 class CORE
 {
+
+    static _instance = null;
+
     tableName = ''
 
     dataTypes = {}
@@ -20,30 +24,55 @@ class CORE
 
     }
 
+    association = {}
+
     use = null
 
-    db = null
+    static db = null
 
-    constructor(db) {
-        this.dataTypes = db.DataTypes
-        this.Op = db.Op
-        this.db = db;
+    constructor() {
+        this.dataTypes = CORE.db.DataTypes
+        this.Op = CORE.db.Op
+    }
+
+    static getInstance() {
+        if (this._instance === null) {
+            this._instance = new this
+        }
+        return this._instance
     }
 
     up() {
-        const modelName = this.constructor.name;
-        if (modelName !== 'CORE') {
-            this.db.Sequelize.define(modelName, this.attributes, {
-                tableName: this.tableName,
-                freezeTableName: this.freezeTableName,
-                timestamps: this.timestamps,
-                createdAt: this.createdAt,
-                updatedAt: this.updatedAt
-            });
-            this.use = this.db.Sequelize.models[modelName]
-        }
-    }
+        const modelName = this.constructor.name
 
+        if (modelName !== 'CORE') {
+            try {
+                CORE.db.Sequelize.define(modelName, this.attributes, {
+                    tableName: this.tableName,
+                    freezeTableName: this.freezeTableName,
+                    timestamps: this.timestamps,
+                    createdAt: this.createdAt,
+                    updatedAt: this.updatedAt
+                });
+                this.use = CORE.db.Sequelize.models[modelName]
+                try {
+                    for(const value of Object.values(this.association)) {
+                        value()
+                    }
+                } catch (error) {
+                    console.error(error)
+                }
+            } catch (error) {
+                console.error(chalk.red('Database config error !!!'));
+            }
+        }
+        return this
+    }
 }
 
-module.exports = CORE
+const init = function (db) {
+    CORE.db = db
+    return CORE
+}
+
+module.exports = { init }

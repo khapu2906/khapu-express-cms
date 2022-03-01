@@ -5,13 +5,12 @@ const __PATH = './../../../../../';
 console.log(__dirname);
 const structure = require('./../../structure/path');
 
+
+
 console.log(`\x1b[5m\x1b[33m******************************************************************************************************\x1b[0m`);
 console.log(`*\x1b[5m\                                       LET'S PREPARE FOR THE MISSION                                \x1b[0m*`);
 console.log(`\x1b[5m\x1b[33m******************************************************************************************************\x1b[0m`);
 console.log('')
-console.log('                                                   ,.,.,.,')
-console.log("                                                  ( 3 _ 3 )");    
-console.log("                                                  ( _ Y _ )");  
 
 const command = {
     init: async (list, parent = '') => {

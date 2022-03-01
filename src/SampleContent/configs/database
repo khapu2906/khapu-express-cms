@@ -5,6 +5,6 @@ module.exports = {
         username: process.env.DB_USER || 'xxx',
         password: process.env.DB_PASSWORD || 'xxx',
         database: process.env.DB_DATABASE || 'xxx',
-        use: true
+        enable: true
     }    
 }
