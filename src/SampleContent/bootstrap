@@ -1,6 +1,4 @@
 'use strict'
-const core = require('../node-module/spy-84-cms/src')
-const path = require('path')
 const chalk = require('chalk')
 const figlet = require('figlet')
 const Table = require('cli-table')
@@ -22,8 +20,10 @@ program
 
 program.parse(process.argv)
 
+const core = require('spy-84-cms')
+const path = require('path')
 const env = process.env;
-env.UV_THREADPOOL_SIZE = core.configs.app.server.thread;
+env.UV_THREADPOOL_SIZE;
 
 const port = core.configs.app.server.port;
 const host = core.configs.app.server.host;

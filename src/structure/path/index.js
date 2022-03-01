@@ -16,7 +16,6 @@ const config_route_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH
 const model_category_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'models/category'), 'utf8')
 const model_post_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'models/post'), 'utf8')
 // Route
-const route_index_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'routes/index'), 'utf8')
 const route_web_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'routes/web'), 'utf8')
 const route_api_sample_file = fs.readFileSync(pathCore.join(__dirname, __PATH + 'routes/api'), 'utf8')
 // View
