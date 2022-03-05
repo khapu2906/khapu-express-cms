@@ -1,5 +1,10 @@
 const __BASE_PATH_ROUTE = "./../../../../"
 
+/**
+ * 
+ * @param {*} app 
+ * @param {Object} config 
+ */
 async function handle (app, config) {
     const listRoute = config.elements;
     const pathRoute = __BASE_PATH_ROUTE + config.basePath;

@@ -1,6 +1,12 @@
 const __BASE_PATH_VIEW = "./../../../../../"
 const path = require('path')
 
+/**
+ * 
+ * @param {*} app 
+ * @param {*} handlebars 
+ * @param {object} config 
+ */
 async function handle (app, handlebars, config) {
     // Template engine
     app.engine('.uniform', handlebars({

@@ -15,11 +15,13 @@ class __NAME__ extends Model {
 
     attributes = {
         id: {
-            type: this.dataTypes.INTEGER,
+            type: this.dataTypes.INTEGER, //Detail: @link (https://sequelize.org/v5/manual/data-types.html)
             autoIncrement: true,
             primaryKey: true
         }
     }
+    
+    association = {}
 
     constructor() {
         super()

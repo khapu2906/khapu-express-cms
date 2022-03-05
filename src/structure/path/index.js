@@ -139,7 +139,19 @@ const dirTree = {
         }
     },
     storage: {
-        logs: {}
+        logs: {},
+        system: {
+            cache: {
+                data: {},
+                "gitignore-file": {
+                    name: ".gitignore",
+                    content: `*
+                        !data/
+                        !.gitignore
+                    `
+                }
+            }
+        }
     },
     "server-file": {
         name: "server.js",

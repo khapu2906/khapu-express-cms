@@ -6,18 +6,22 @@ class DB
 
     static #_instance = null;
 
-    constructor() {
-    
-    }
-
-    static getInstance() {
+    static getInstance(sequelize, config) {
         if (DB.#_instance === null) {
-            DB.#_instance = new DB;
+            DB.#_instance = new DB(sequelize, config);
         }
         return DB.#_instance;
     }
 
-    handle(sequelize, config) {
+    constructor(sequelize, config) {
+        this.#handle(sequelize, config)
+    }
+    /**
+     * 
+     * @param {*} sequelize 
+     * @param {Object} config 
+     */
+    #handle(sequelize, config) {
         try {
             this.dataValues = {
                 sequelize,
@@ -36,6 +40,9 @@ class DB
                                 value.password = ''
                             } 
                             try {
+                                /**
+                                 * @link (https://sequelize.org/master/manual/getting-started.html)
+                                 */
                                 this.dataValues.Sequelize = new sequelize.Sequelize(value.database, value.username, value.password, {
                                     host: value.host,
                                     port: value.port,
@@ -59,4 +66,4 @@ class DB
     }
 }
 
-module.exports = DB.getInstance();
+module.exports = DB.getInstance;

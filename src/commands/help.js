@@ -1,10 +1,9 @@
-const figlet = require('figlet')
 const Table = require('cli-table')
-const program = require('commander')
 const terminalSize = require('term-size')
 
 const teSi = terminalSize();
 const singleColumn = Math.floor(teSi.columns / 12);
+
 const table = new Table({
     head: ['COMMAND', 'TAG', 'DESCRIPTION'],
     chars: { 'top': '═' , 'top-mid': '╤' , 'top-left': '╔' , 'top-right': '╗'
@@ -17,7 +16,8 @@ const table = new Table({
         ['spy prepare', '', 'Be used to generate a structure'],
         ['spy prepare:model', '--name=<required>, --path=<path>', 'Be used to generate a model'],
         ['spy prepare:controller', '--name=<required>, --path=<path>', 'Be used to generate a controller'],
-        ['spy help', '', 'Be used to show list command of SPY84'],
+        ['spy clear:cache', '', 'Be used to remove full cache'],
+        ['spy help', '', 'Be used to show list command of SPY84']
     ]
 })
 

@@ -19,10 +19,11 @@ const route = require('./core/route').handle(app, configs.route)
 
 const database = require('./core/database')
 
-database.handle(sequelize, configs.database)
-
-const db = database.dataValues;
+const db = database(sequelize, configs.database).dataValues;
 const Model = require('./core/model').init(db)
+
+const Cache = require('./core/cache')(configs.cache)
+const log = app.use(morgan('combined'));
 
 module.exports = {
     express,
@@ -37,5 +38,6 @@ module.exports = {
     configs,
     db,
     Model,
+    Cache,
     to
 }

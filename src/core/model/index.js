@@ -6,33 +6,59 @@ class CORE
 
     static _instance = null;
 
+    /**
+     * @var {string} tableName
+     */
     tableName = ''
 
+    /**
+     * @var {Object} dataTypes
+     */
     dataTypes = {}
 
-    Op = false
-
+    /**
+     * @var {boolean} freezeTableName
+     */
     freezeTableName = true
 
+    /**
+     * @var {boolean} timestamps
+     */
     timestamps = false
 
+    /**
+     * @var {boolean} createdAt
+     */
     createdAt = false
 
+    /**
+     * @var {string} updatedAt
+     */
     updatedAt = 'updatedAt'
 
-    attributes = {
+    /**
+     * @var {object} attributes
+     */
+    attributes = {}
 
-    }
-
+    /**
+     * @var {object} association
+     */
     association = {}
 
+    /**
+     * 
+     * @var {Sequelize.model} use
+     */
     use = null
 
+    /**
+     * @static {Sequelize.db} db
+     */
     static db = null
 
     constructor() {
         this.dataTypes = CORE.db.DataTypes
-        this.Op = CORE.db.Op
     }
 
     static getInstance() {
@@ -47,6 +73,9 @@ class CORE
         const modelName = this.constructor.name
 
         if (modelName !== 'CORE') {
+            /**
+             * @link (https://sequelize.org/master/manual/model-basics.html)
+             */
             try {
                 CORE.db.Sequelize.define(modelName, this.attributes, {
                     tableName: this.tableName,
@@ -56,6 +85,7 @@ class CORE
                     updatedAt: this.updatedAt
                 });
                 this.use = CORE.db.Sequelize.models[modelName]
+                this.use.Op = CORE.db.Op
                 try {
                     for(const value of Object.values(this.association)) {
                         value()
@@ -70,6 +100,12 @@ class CORE
     }
 }
 
+
+/**
+ * 
+ * @param {*} db 
+ * @returns {CORE}
+ */
 const init = function (db) {
     CORE.db = db
     return CORE

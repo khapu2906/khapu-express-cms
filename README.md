@@ -58,12 +58,6 @@ npm i spy-84-cms
 
   ```
   spy help
-
-  ```
-    **or**
-  ```
-  npx spy prepare
-
   
 * Generate structure by:
 

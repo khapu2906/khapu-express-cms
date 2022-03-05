@@ -1,8 +1,36 @@
 module.exports = {
-    redis: {
-        host: process.env.REDIS_CACHE_HOST || 'xxx',
-        port: process.env.REDIS_CACHE_PORT || 'xxx',
-        auth: process.env.REDIS_CACHE_AUTH || 'xxx',
-        db: process.env.REDIS_CACHE_DB || 'xxx'
+    default: {
+        driver: process.env.CACHE_DRIVER || 'file' // Choose it for default value
     },
+    storages: {
+        file: {
+            path: './storage/system/cache/data', // Where is the file cache
+            encode: true, // Want to encode cached data?
+            enable: true // Want to use it?
+        },
+        redis: {
+            /**
+             *  @link (https://www.npmjs.com/package/redis)
+             */
+            host: process.env.REDIS_CACHE_HOST || '127.0.0.1',
+            port: process.env.REDIS_CACHE_PORT || 6379,
+            auth: process.env.REDIS_CACHE_AUTH || 'xxx:xxx',// [username][:password]
+            db: process.env.REDIS_CACHE_DB || '0',
+            enable: false // Want to use it?
+        },
+        memcached: {
+            host: process.env.MEM_CACHE_HOST || '127.0.0.1',
+            port: process.env.MEM_CACHE_PORT || 11211,
+            persistentId: process.env.MEM_CACHE_PERSISTENT_ID || 'xxx', 
+            username: process.env.MEM_CACHE_USERNAME || 'xxx',
+            password: process.env.MEM_CACHE_PASSWORD || 'xxx',
+            options: {
+                /**
+                 * @link (https://www.npmjs.com/package/memcached)
+                 */
+            },
+            enable: false // Want to use it?
+        }
+    },
+    prefix : process.env.PREFIX || 'SPY84' // What prefix of file cache
 }
