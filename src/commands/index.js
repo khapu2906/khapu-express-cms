@@ -6,19 +6,19 @@ const chalk = require('chalk')
 switch (action) {
     case 'go':
         require('./go')
-        break;
+        break
     case 'help':
         require('./help')
-        break;
+        break
     case 'clear:cache':
         require('./cache')
-        break;
+        break
     default:
         if (action && action.includes('prepare')) {
             require('./init')
         } else {
             console.log(chalk.red('Command not exist!'))
         }
-        return 
+        break
 }
 

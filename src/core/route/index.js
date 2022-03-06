@@ -11,7 +11,7 @@ async function handle (app, config) {
     for(const [key, value] of Object.entries(listRoute)) {
         const r = await require(pathRoute + '/' + value.pathFile);
         r.go();
-        app.use(value.slug, r.to)
+        app.use(value.prefix, r.to)
     }
 }
 

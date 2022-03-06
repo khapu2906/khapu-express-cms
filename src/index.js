@@ -8,22 +8,35 @@ const bodyParser = require('body-parser')
 const { engine } = require('express-handlebars')
 const methodOverride = require('method-override')
 const app = express()
-const to = express.Router();
+const to = express.Router()
 
-const provider = require('./../../../app/providers');
-provider.boot(app)  
+let provider = ''
+let configs = {}
+let route = null
+let database = null
+let db = null
+let view = null
+let Model = {}
+let Cache = {}
 
-const configs = provider.register.configs;
-const view = require('./core/resource/view').handle(app, engine, configs.view)
-const route = require('./core/route').handle(app, configs.route)
+try {
+    provider = require('./../../../app/providers')
+    provider.boot(app)
 
-const database = require('./core/database')
+    configs = provider.register.configs ?? {}
+    view = require('./core/resource/view').handle(app, engine, configs.view)
+    route = require('./core/route').handle(app, configs.route)
 
-const db = database(sequelize, configs.database).dataValues;
-const Model = require('./core/model').init(db)
+    database = require('./core/database')
 
-const Cache = require('./core/cache')(configs.cache)
-const log = app.use(morgan('combined'));
+    db = database(sequelize, configs.database).dataValues
+    Model = require('./core/model').init(db)
+
+    Cache = require('./core/cache')(configs.cache)
+} catch(e) {
+    console.error(e)
+}
+app.use(morgan('combined'))
 
 module.exports = {
     express,

@@ -3,11 +3,11 @@ module.exports = {
     elements: {
         api: {
             pathFile: "./api.js",
-            slug: "/api"
+            prefix: "/api"
         },
         web: {
             pathFile: "./web.js",
-            slug: "/"
+            prefix: "/"
         }
     }
 }

@@ -122,7 +122,7 @@ class CacheFile
                 updateAt: timestamp,
             }
             input.value = value
-            // // Create cache file if it not exist 
+            // Create cache file if it not exist 
             if (!fs.existsSync(path.join(this.path, `${fileName}`))) {
                 input.createAt = timestamp
                 const inputCrypto = (this.encode) ? this.#encode(JSON.stringify(input)) : JSON.stringify(input);
@@ -163,6 +163,9 @@ class CacheFile
         }
     }
 
+    /**
+     * Clear full data
+     */
     async clear() {
         await exec(`rm -rf ${this.path}/`, (error, stdout, stderr) => {
             if (error) {
@@ -173,7 +176,6 @@ class CacheFile
                 console.log(`stderr: ${stderr}`);
                 return;
             }
-            console.log(`stdout: ${stdout}`);
         })
         return await fs.mkdirSync(this.path)
     }

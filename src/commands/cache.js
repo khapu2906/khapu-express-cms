@@ -19,6 +19,5 @@ new Promise((resolve, reject) => {
             console.log(`stderr: ${stderr}`);
             return;
         }
-        console.log(`stdout: ${stdout}`);
     })
 })
