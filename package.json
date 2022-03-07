@@ -1,6 +1,6 @@
 {
   "name": "spy-84-cms",
-  "version": "0.0.24-alpha",
+  "version": "0.0.25-alpha",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "express",
     "node",
     "nodejs",
-    "expressjs",
+    "expressJs",
     "nodejs-cms",
     "express-cms"
   ],

@@ -10,12 +10,12 @@ const table = new Table({
          , 'bottom': '═' , 'bottom-mid': '╧' , 'bottom-left': '╚' , 'bottom-right': '╝'
          , 'left': '║' , 'left-mid': '╟' , 'mid': '─' , 'mid-mid': '┼'
          , 'right': '║' , 'right-mid': '╢' , 'middle': '│' },
-    colWidths: [singleColumn * 2, singleColumn * 2.5, singleColumn * 4],
+    colWidths: [singleColumn * 2, singleColumn * 2.5, singleColumn * 7],
     rows: [
         ['spy go', '', 'Be used to start your app'],
-        ['spy prepare', '', 'Be used to generate a structure'],
-        ['spy prepare:model', '--name=<required>, --path=<path>', 'Be used to generate a model'],
-        ['spy prepare:controller', '--name=<required>, --path=<path>', 'Be used to generate a controller'],
+        ['spy prepare', '--name=<required>', 'Be used to generate a structure'],
+        ['spy prepare:model', '--name=<required>, --path=<path>', 'Be used to generate a model(name is model name, path is path create file from path of project'],
+        ['spy prepare:controller', '--name=<required>, --path=<path>', 'Be used to generate a controller(name is controller name, path is path create file from path of project '],
         ['spy clear:cache', '', 'Be used to remove full cache'],
         ['spy help', '', 'Be used to show list command of SPY84']
     ]

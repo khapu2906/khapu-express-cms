@@ -17,14 +17,18 @@ const command = {
         for(const[key, value] of Object.entries(list)) {
             if (key.includes('file')) {
                 const path = parent + '/' + value.name;
-                const file = await fs.writeFile(pathCore.join(__dirname, __PATH + path), value.content, err => {
-                    if (err) {
-                        console.error(err)
-                        return
-                    } else {
-                        console.log('** ', value.name, 'was equipped!',' **');
-                    }
-                })
+                if (!fs.existsSync(pathCore.join(__dirname, __PATH + path))) {
+                    const file = await fs.writeFile(pathCore.join(__dirname, __PATH + path), value.content, err => {
+                        if (err) {
+                            console.error(err)
+                            return
+                        } else {
+                            console.log('** ', value.name, 'was equipped!',' **');
+                        }
+                    })
+                } else {
+                    console.log('** ', value.name, 'exist',' **');
+                }
             } else {
                 const path = parent + '/' + key;
                 const folder = await fs.mkdir(pathCore.join(__dirname, __PATH + path), (err) => {

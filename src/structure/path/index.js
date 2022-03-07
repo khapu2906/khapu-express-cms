@@ -115,7 +115,7 @@ const dirTree = {
         views: {
             layouts: {
                 "main-file": {
-                    name: "main-file",
+                    name: "main.uniform",
                     content: view_layout_sample_file
                 }
             },
