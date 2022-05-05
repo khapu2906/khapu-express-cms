@@ -1,43 +1,46 @@
 {
-  "name": "spy-84-cms",
-  "version": "0.0.25-alpha",
-  "description": "",
-  "main": "src/index.js",
-  "scripts": {
-    "dev": "",
-    "build": "",
-    "init": " ",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "express",
-    "node",
-    "nodejs",
-    "expressJs",
-    "nodejs-cms",
-    "express-cms"
-  ],
-  "bin": {
-    "spy": "src/commands/index.js"
-  },
-  "author": "khapu <khapuonstage@gmail.com>",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.1",
-    "chalk": "^4.1.2",
-    "cli-table": "^0.3.11",
-    "commander": "^9.0.0",
-    "crypto": "^1.0.1",
-    "dotenv": "^14.2.0",
-    "express": "^4.17.2",
-    "express-handlebars": "^6.0.2",
-    "figlet": "^1.5.2",
-    "method-override": "^3.0.0",
-    "morgan": "^1.10.0",
-    "node-fetch": "^3.2.1",
-    "redis": "^4.0.4",
-    "sequelize": "^6.14.0",
-    "sequelize-cli": "^6.4.1",
-    "term-size": "^2.2.1"
-  }
+    "name": "spy-84-cms",
+    "version": "0.0.26-alpha",
+    "description": "",
+    "main": "src/index.js",
+    "scripts": {
+        "dev": "",
+        "build": "",
+        "init": " ",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "express",
+        "node",
+        "nodejs",
+        "expressJs",
+        "nodejs-cms",
+        "express-cms"
+    ],
+    "bin": {
+        "spy": "src/commands/index.js"
+    },
+    "author": "khapu <khapuonstage@gmail.com>",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.1",
+        "chalk": "^4.1.2",
+        "cli-table": "^0.3.11",
+        "commander": "^9.0.0",
+        "crypto": "^1.0.1",
+        "dotenv": "^14.2.0",
+        "express": "^4.17.2",
+        "express-handlebars": "^6.0.2",
+        "figlet": "^1.5.2",
+        "memcached": "^2.2.2",
+        "method-override": "^3.0.0",
+        "morgan": "^1.10.0",
+        "mysql2": "^2.3.3",
+        "node-fetch": "^3.2.1",
+        "os": "^0.1.2",
+        "redis": "^4.0.4",
+        "sequelize": "^6.14.0",
+        "sequelize-cli": "^6.4.1",
+        "term-size": "^2.2.1"
+    }
 }
